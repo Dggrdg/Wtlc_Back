@@ -1,5 +1,6 @@
 package com.wtlc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,16 +11,13 @@ import com.wtlc.service.CmsService;
 @RequestMapping("/cms")
 public class CmsController {
 
-	private final CmsService cmsService;
-
-	CmsController(CmsService cmsService) {
-		this.cmsService = cmsService;
-	}
+	@Autowired
+	private CmsService cmsService;
 
 	@PostMapping("/searchIpLocation")
 	public void SearchIpLocation() throws Exception {
 
-		cmsService.batchLookupAndWrite();
+		cmsService.searchForeignIP();
 
 	}
 }
