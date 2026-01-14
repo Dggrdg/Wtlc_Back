@@ -1,5 +1,7 @@
 package com.wtlc.bean;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+
 import lombok.Getter;
 import lombok.Setter;
 
